@@ -4,7 +4,7 @@ import unicodedata
 from smoke import canary, detect
 
 c = canary(7)
-zw = "​".join(c)
+zw = "\u200b".join(c)
 tag = "".join(chr(0xE0000 + ord(ch)) for ch in c)
 wrap = lambda s: f"# Title\n\nSome visible text. {s} More text.\n"
 
