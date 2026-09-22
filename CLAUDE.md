@@ -42,8 +42,8 @@ API keys live in `~/.smoke.env`. That file is git-ignored and sourced per run; n
 
 - Canary: `"sm0ke" + token_hex(6) + f"{i:02d}"`. It is pure lowercase ASCII with no whitespace, `--`, or `<>&`. The needle never changes; only the haystack is transformed.
 - **NFKC/NFKD normalisation does nothing** to these payloads, because they are all Unicode category `Cf`. Don't "simplify" the detector to use NFKC. The tests pin this.
-- Passes run in order and the first hit wins: `exact` (reached), then `nowrap` (drop whitespace), then `untag` (decode U+E0000–E007F via `chr(ord(c) - 0xE0000)`, then drop `Cf`, then drop whitespace), then `nocf` (drop `Cf`, then drop whitespace). No match means `stripped`.
-- **`untag` must run before plain `Cf`-stripping.** Tag characters are themselves `Cf`, so stripping first would falsely report tag payloads as `stripped`. Tests assert the *pass name*, not just the state.
+- Passes run in order and the first hit wins: `exact` (reached), then `nowrap` (drop whitespace), then `nocf` (drop `Cf`, then drop whitespace), then `untag` (decode U+E0000–E007F via `chr(ord(c) - 0xE0000)`, then drop `Cf`, then drop whitespace). No match means `stripped`. `nocf` must precede `untag` (PRD table has it backwards): `untag` also drops `Cf`, so it would shadow `nocf`.
+- **Inside the `untag` pass, decode before dropping `Cf`.** Tag characters are themselves `Cf`, so stripping first would falsely report tag payloads as `stripped`. Tests assert the *pass name*, not just the state.
 
 ## Repo layout conventions
 
