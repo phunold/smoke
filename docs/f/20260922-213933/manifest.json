@@ -1,0 +1,114 @@
+[
+ {
+  "fixture": "comment-in_main-short",
+  "payload": "comment",
+  "placement": "in_main",
+  "length": "short",
+  "canary": "sm0ke1c207e24890d00"
+ },
+ {
+  "fixture": "comment-in_main-long",
+  "payload": "comment",
+  "placement": "in_main",
+  "length": "long",
+  "canary": "sm0keaa035345d83101"
+ },
+ {
+  "fixture": "comment-out_of_main-short",
+  "payload": "comment",
+  "placement": "out_of_main",
+  "length": "short",
+  "canary": "sm0ke58c00adebe5002"
+ },
+ {
+  "fixture": "comment-out_of_main-long",
+  "payload": "comment",
+  "placement": "out_of_main",
+  "length": "long",
+  "canary": "sm0ke2ef84a9899f903"
+ },
+ {
+  "fixture": "css_hidden-in_main-short",
+  "payload": "css_hidden",
+  "placement": "in_main",
+  "length": "short",
+  "canary": "sm0kefa7dda7ed47204"
+ },
+ {
+  "fixture": "css_hidden-in_main-long",
+  "payload": "css_hidden",
+  "placement": "in_main",
+  "length": "long",
+  "canary": "sm0ke80e79e3eebda05"
+ },
+ {
+  "fixture": "css_hidden-out_of_main-short",
+  "payload": "css_hidden",
+  "placement": "out_of_main",
+  "length": "short",
+  "canary": "sm0kef09af466cb3906"
+ },
+ {
+  "fixture": "css_hidden-out_of_main-long",
+  "payload": "css_hidden",
+  "placement": "out_of_main",
+  "length": "long",
+  "canary": "sm0ke1b4e881de96907"
+ },
+ {
+  "fixture": "zero_width-in_main-short",
+  "payload": "zero_width",
+  "placement": "in_main",
+  "length": "short",
+  "canary": "sm0ke634b1cc636c208"
+ },
+ {
+  "fixture": "zero_width-in_main-long",
+  "payload": "zero_width",
+  "placement": "in_main",
+  "length": "long",
+  "canary": "sm0ked903ed725ecf09"
+ },
+ {
+  "fixture": "zero_width-out_of_main-short",
+  "payload": "zero_width",
+  "placement": "out_of_main",
+  "length": "short",
+  "canary": "sm0kea05026b0e73510"
+ },
+ {
+  "fixture": "zero_width-out_of_main-long",
+  "payload": "zero_width",
+  "placement": "out_of_main",
+  "length": "long",
+  "canary": "sm0ked04e6500a01011"
+ },
+ {
+  "fixture": "unicode_tag-in_main-short",
+  "payload": "unicode_tag",
+  "placement": "in_main",
+  "length": "short",
+  "canary": "sm0kee58aebc5a53a12"
+ },
+ {
+  "fixture": "unicode_tag-in_main-long",
+  "payload": "unicode_tag",
+  "placement": "in_main",
+  "length": "long",
+  "canary": "sm0ke398b91dd8ec213"
+ },
+ {
+  "fixture": "unicode_tag-out_of_main-short",
+  "payload": "unicode_tag",
+  "placement": "out_of_main",
+  "length": "short",
+  "canary": "sm0ke599b1e0484f114"
+ },
+ {
+  "fixture": "unicode_tag-out_of_main-long",
+  "payload": "unicode_tag",
+  "placement": "out_of_main",
+  "length": "long",
+  "canary": "sm0keaf2d8f7fd18715"
+ }
+]
