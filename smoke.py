@@ -102,8 +102,53 @@ def generate(run_id=None):
     (DOCS / ".nojekyll").touch()
     for old in sorted((DOCS / "f").iterdir())[:-2]:  # keep last two; git history has the rest
         shutil.rmtree(old)
+    write_index()
     print(f"generated {len(manifest)} fixtures -> {out.relative_to(ROOT)}")
     return run_id
+
+
+INDEX = """<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smoke fixtures</title>
+<style>
+:root {{ color-scheme: light dark; --fg: #1f2328; --muted: #59636e; --line: #d1d9e0; --bg: #fff; --link: #0969da; }}
+@media (prefers-color-scheme: dark) {{ :root {{ --fg: #e6edf3; --muted: #9198a1; --line: #3d444d; --bg: #0d1117; --link: #4493f8; }} }}
+body {{ margin: 0 auto; max-width: 860px; padding: 32px 16px; font: 15px/1.5 system-ui, sans-serif; color: var(--fg); background: var(--bg); }}
+h1 {{ margin: 0 0 4px; }} h2 {{ margin-top: 36px; font-size: 18px; }}
+p {{ color: var(--muted); margin: 0 0 8px; }}
+a {{ color: var(--link); text-decoration: none; }} a:hover {{ text-decoration: underline; }}
+.wrap {{ overflow-x: auto; }}
+table {{ border-collapse: collapse; width: 100%; font-size: 14px; }}
+th, td {{ border-bottom: 1px solid var(--line); padding: 6px 10px; text-align: left; white-space: nowrap; }}
+th {{ color: var(--muted); font-weight: 600; }}
+code {{ font: 13px ui-monospace, monospace; }}
+</style></head><body>
+<h1>Smoke fixtures</h1>
+<p>Test pages for <a href="https://github.com/phunold/smoke">Smoke</a>. Does hidden text reach the model through
+LLM-ready fetch tools? Each page is the same article with one hidden canary. The payload is invisible on purpose,
+so use view-source to see it.</p>
+{runs}
+</body></html>
+"""
+
+
+def write_index():
+    """docs/index.html listing every served run. Rebuilt on each generate."""
+    runs = []
+    for d in sorted((DOCS / "f").iterdir(), reverse=True):
+        fx = json.loads((d / "manifest.json").read_text())
+        head = "<tr><th>payload</th>" + "".join(f"<th>{p} / {l}</th>" for p, l in itertools.product(PLACEMENTS, LENGTHS))
+        rows = [head + "</tr>"]
+        for payload in PAYLOADS:
+            cells = "".join(
+                f'<td><a href="f/{d.name}/{payload}-{p}-{l}.html">open</a></td>' for p, l in itertools.product(PLACEMENTS, LENGTHS)
+            )
+            rows.append(f"<tr><td><code>{payload}</code></td>{cells}</tr>")
+        runs.append(
+            f'<h2>Run <code>{d.name}</code></h2><p>{len(fx)} fixtures · <a href="f/{d.name}/manifest.json">manifest.json</a></p>'
+            f'<div class="wrap"><table>{"".join(rows)}</table></div>'
+        )
+    (DOCS / "index.html").write_text(INDEX.format(runs="\n".join(runs)), encoding="utf-8")
 
 
 def latest_run():
