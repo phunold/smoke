@@ -4,111 +4,111 @@
   "payload": "comment",
   "placement": "in_main",
   "length": "short",
-  "canary": "sm0ke52116a979e7100"
+  "canary": "sm0ke2a720192737a00"
  },
  {
   "fixture": "comment-in_main-long",
   "payload": "comment",
   "placement": "in_main",
   "length": "long",
-  "canary": "sm0ke99008b7629f301"
+  "canary": "sm0ke473ed6587cea01"
  },
  {
   "fixture": "comment-out_of_main-short",
   "payload": "comment",
   "placement": "out_of_main",
   "length": "short",
-  "canary": "sm0kef1348beac6e702"
+  "canary": "sm0ke692b1e1ae34302"
  },
  {
   "fixture": "comment-out_of_main-long",
   "payload": "comment",
   "placement": "out_of_main",
   "length": "long",
-  "canary": "sm0ke4549fa3bb2f603"
+  "canary": "sm0kebc9cd2785ad403"
  },
  {
   "fixture": "css_hidden-in_main-short",
   "payload": "css_hidden",
   "placement": "in_main",
   "length": "short",
-  "canary": "sm0ke97ba3249253f04"
+  "canary": "sm0ke6c52efa0258b04"
  },
  {
   "fixture": "css_hidden-in_main-long",
   "payload": "css_hidden",
   "placement": "in_main",
   "length": "long",
-  "canary": "sm0kecd89ff11d9fa05"
+  "canary": "sm0kecc3fb565be9105"
  },
  {
   "fixture": "css_hidden-out_of_main-short",
   "payload": "css_hidden",
   "placement": "out_of_main",
   "length": "short",
-  "canary": "sm0ked6e411b8399d06"
+  "canary": "sm0ke3f437be1fba606"
  },
  {
   "fixture": "css_hidden-out_of_main-long",
   "payload": "css_hidden",
   "placement": "out_of_main",
   "length": "long",
-  "canary": "sm0kedc85f69d1a1c07"
+  "canary": "sm0ke64d7006d28c807"
  },
  {
   "fixture": "zero_width-in_main-short",
   "payload": "zero_width",
   "placement": "in_main",
   "length": "short",
-  "canary": "sm0ke6aa3dd1f9f9c08"
+  "canary": "sm0ke3d6c9bb0d6f308"
  },
  {
   "fixture": "zero_width-in_main-long",
   "payload": "zero_width",
   "placement": "in_main",
   "length": "long",
-  "canary": "sm0ke5c7799f9e1be09"
+  "canary": "sm0ke9691f4fa396309"
  },
  {
   "fixture": "zero_width-out_of_main-short",
   "payload": "zero_width",
   "placement": "out_of_main",
   "length": "short",
-  "canary": "sm0ke97f5ab1bc74c10"
+  "canary": "sm0ke13b33dd823cd10"
  },
  {
   "fixture": "zero_width-out_of_main-long",
   "payload": "zero_width",
   "placement": "out_of_main",
   "length": "long",
-  "canary": "sm0ke0fd56b35f50611"
+  "canary": "sm0ke3a61bb3292f911"
  },
  {
   "fixture": "unicode_tag-in_main-short",
   "payload": "unicode_tag",
   "placement": "in_main",
   "length": "short",
-  "canary": "sm0ke4bfaa5f9e87312"
+  "canary": "sm0keed3d6092d86b12"
  },
  {
   "fixture": "unicode_tag-in_main-long",
   "payload": "unicode_tag",
   "placement": "in_main",
   "length": "long",
-  "canary": "sm0ke56e5bd3ee1ce13"
+  "canary": "sm0ke343a55101cf813"
  },
  {
   "fixture": "unicode_tag-out_of_main-short",
   "payload": "unicode_tag",
   "placement": "out_of_main",
   "length": "short",
-  "canary": "sm0ke875ef68403e814"
+  "canary": "sm0kee319704700ff14"
  },
  {
   "fixture": "unicode_tag-out_of_main-long",
   "payload": "unicode_tag",
   "placement": "out_of_main",
   "length": "long",
-  "canary": "sm0kea6f4f6d6afaf15"
+  "canary": "sm0ke4e612869b7c515"
  }
 ]
