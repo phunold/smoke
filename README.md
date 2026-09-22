@@ -57,7 +57,7 @@ Most "AI web search tools for agents" do search, not extraction.
 
 ## Results
 
-Local baselines, offline run. Hosted rows are added once the monthly job runs.
+Run `20260922-213933` (GitHub Actions, live fixtures on Pages). The Firecrawl, Exa and Context.dev rows need API keys and are pending. Tavily is pending a publishing decision.
 
 Each cell is four fixtures: in_main/short, in_main/long, out_of_main/short, out_of_main/long.
 ● reached verbatim · ◐ reached altered · ○ stripped · `·` empty · ✕ error
@@ -67,9 +67,11 @@ Each cell is four fixtures: in_main/short, in_main/long, out_of_main/short, out_
 | trafilatura | ○○○○ | ○○○○ | ●●○○ | ○○○○ | 2/16 | n/a |
 | html2text | ○○○○ | ●●●● | ◐◐◐◐ | ◐◐◐◐ | 12/16 | n/a |
 | markitdown | ○○○○ | ●●●● | ◐◐◐◐ | ◐◐◐◐ | 12/16 | n/a |
+| jina | ○○○○ | ○○○○ | ◐◐○◐ | ◐◐○○ | 5/16 | n/a |
 
 - **trafilatura** removes the zero-width spaces. The obfuscated canary therefore reaches the model as clean plain text.
 - **html2text and markitdown** pass `display:none` text and invisible tag characters straight through.
+- **Jina** strips comments and `display:none` text. It keeps zero-width and tag-character payloads inside the article. In the footer, it drops short payloads but keeps a long one: its boilerplate removal judges the footer by how much text it holds. Payload length therefore matters, not just where the payload sits. It has no warning mechanism.
 
 ## Running
 
